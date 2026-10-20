@@ -258,3 +258,56 @@ body {
     justify-content: center;
     font-weight: bold;
 }
+
+/* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ --- */
+@media screen and (max-width: 768px) {
+    /* Перестраиваем шапку сайта в колонку */
+    .header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .header-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Баннер с фото делаем вертикальным, чтобы картинка не вылезала */
+    .hero-card {
+        flex-direction: column-reverse;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.4em;
+    }
+
+    /* Сетка услуг на телефоне превращается в одну колонку (друг под другом) */
+    .grid-services {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
