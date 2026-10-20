@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қамқор - Ақпараттық көмек жүйесі</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="logo" onclick="showPage('home')">
+            <span class="heart-icon">💚</span>
+            <span class="logo-text">Қамқор</span>
+        </div>
+        <nav class="nav-links">
+            <button onclick="showPage('home')" class="nav-btn active">Басты бет</button>
+            <button onclick="showPage('health')" class="nav-btn">Денсаулық</button>
+            <button onclick="showPage('payments')" class="nav-btn">Төлемдер</button>
+            <button onclick="showPage('docs')" class="nav-btn">Құжаттар</button>
+            <button onclick="showPage('voice-info')" class="nav-btn">Көмек</button>
+        </nav>
+        
+        <!-- Регулятор шрифта и язык прямо в шапке -->
+        <div class="header-controls">
+            <div class="font-resizer">
+                <button onclick="changeFontSize('small')" title="Уменьшить шрифт">A-</button>
+                <button onclick="changeFontSize('large')" title="Увеличить шрифт">A+</button>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn active">Қазақша</button>
+                <button class="lang-btn">Русский</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- СТРАНИЦА 1: Главная (Home) -->
+    <main id="page-home" class="page active">
+        <!-- Баннер с Фотографией -->
+        <section class="hero-card">
+            <div class="hero-text">
+                <h2>Цифрлық қызметтерді пайдалану оңай!</h2>
+                <p>Қамқор – егде жастағы адамдарға арналған ақпараттық көмек жүйесі.</p>
+                <button class="voice-btn" onclick="speakText('Цифрлық қызметтерді пайдалану оңай! Қамқор – егде жастағы адамдарға арналған ақпараттық көмек жүйесі.')">
+                    📢 Дауыстық көмек
+                </button>
+            </div>
+            <div class="hero-image">
+                <img src="grandparents.jpg" alt="Бабушка и дедушка" id="main-banner-img">
+            </div>
+        </section>
+
+        <!-- 4 Разные Кнопки Услуг -->
+        <section class="grid-services">
+            <div class="card blue" onclick="showPage('health')">
+                <h3>➕ Денсаулық</h3>
+                <p>Медициналық қызметтер, дәрігерге жазылу және тіркеу</p>
+            </div>
+            <div class="card green" onclick="showPage('payments')">
+                <h3>💳 Төлемдер</h3>
+                <p>Коммуналдық, байланыс және басқа да төлемдер</p>
+            </div>
+            <div class="card orange" onclick="showPage('docs')">
+                <h3>📄 Құжаттар</h3>
+                <p>Электрондық қызметтер, зейнетақы және анықтамалар</p>
+            </div>
+            <div class="card purple" onclick="showPage('voice-info')">
+                <h3>🎙️ Дауыстық көмек</h3>
+                <p>Қадамдық нұсқаулар және дауысты түсіндіру</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- СТРАНИЦА 2: Денсаулық (Здоровье) -->
+    <main id="page-health" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">← Артқа</button>
+            <h2>➕ Денсаулық сақтау қызметтері</h2>
+            <p class="subtitle">Медициналық көмек және дәрігерге жазылу</p>
+            
+            <button class="voice-btn inline" onclick="speakText('Денсаулық бөлімі. Бұнда сіз дәрігерге жазыла аласыз, жедел жәрдем шақыра аласыз немесе дәрі-дәрмек іздей аласыз.')">
+                🔊 Бөлімді тыңдау
+            </button>
+
+            <div class="list-group">
+                <div class="list-item">
+                    <div class="item-info">
+                        <span class="item-icon blue-bg">👨‍⚕️</span>
+                        <div>
+                            <h4>Дәрігер қабылдауына жазылу</h4>
+                            <p>Емханаға немесе участкелік дәрігерге өтінім беру</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="item-info">
+                        <span class="item-icon red-bg">🚑</span>
+                        <div>
+                            <h4>Жедел жәрдем шақыру (103)</h4>
+                            <p>Шұғыл медициналық көмек шақыру нұсқаулығы</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="item-info">
+                        <span class="item-icon green-bg">💊</span>
+                        <div>
+                            <h4>Дәрі-дәрмек іздеу</h4>
+                            <p>Жақын маңдағы дәріханалардан тегін дәрілерді тексеру</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- СТРАНИЦА 3: Төлемдер (Платежи) -->
+    <main id="page-payments" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">← Артқа</button>
+            <h2>💳 Төлемдер бөлімі</h2>
+            <p class="subtitle">Қажетті қызметті таңдаңыз</p>
+            
+            <button class="voice-btn inline" onclick="speakText('Төлемдер бөлімі. Коммуналдық төлемдерді, мобильді байланысты төлей аласыз.')">
+                🔊 Бөлімді тыңдау
+            </button>
+
+            <div class="list-group">
+                <div class="list-item" onclick="showPage('guide-communal')">
+                    <div class="item-info">
+                        <span class="item-icon green-bg">🏠</span>
+                        <div>
+                            <h4>Коммуналдық төлемдер</h4>
+                            <p>Су, жарық, жылу, газ төлеу нұсқаулығы</p>
+                        </div>
+                    </div>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="list-item">
+                    <div class="item-info">
+                        <span class="item-icon blue-bg">📱</span>
+                        <div>
+                            <h4>Мобильді байланыс</h4>
+                            <p>Баланс толтыру (Activ, Beeline, Tele2)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- СТРАНИЦА 4: Пошаговая инструкция коммуналки -->
+    <main id="page-guide-communal" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('payments')">← Артқа</button>
+            <h2>Коммуналдық төлемдерді қалай төлеуге болады?</h2>
+            
+            <button class="voice-btn inline" onclick="speakText('1. Банк қосымшасын ашыңыз. 2. Төлемдер бөлімін табыңыз. 3. Коммуналдық қызметтер таңдаңыз. 4. Деректерді енгізіп төлеңіз.')">
+                🔊 Қадамдарды тыңдау
+            </button>
+
+            <ol class="steps-list">
+                <li><span>1</span> Өзіңіздің банк қосымшасын ашыңыз (Kaspi, Halyk).</li>
+                <li><span>2</span> «Төлемдер» бөлімін табыңыз.</li>
+                <li><span>3</span> «Коммуналдық қызметтер» бөлімін таңдаңыз.</li>
+                <li><span>4</span> Деректерді (жеке шот) енгізіп, төлемді растаңыз.</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- СТРАНИЦА 5: Құжаттар (Документы) -->
+    <main id="page-docs" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">← Артқа</button>
+            <h2>📄 Мемлекеттік қызметтер мен құжаттар</h2>
+            <p class="subtitle">Электрондық анықтамалар алу</p>
+
+            <button class="voice-btn inline" onclick="speakText('Құжаттар бөлімі. Зейнетақы анықтамасын алу, ХОН қызметтері және егов арқылы анықтама тапсырыс беру.')">
+                🔊 Бөлімді тыңдау
+            </button>
+
+            <div class="list-group">
+                <div class="list-item">
+                    <div class="item-info">
+                        <span class="item-icon orange-bg">📜</span>
+                        <div>
+                            <h4>Зейнетақы анықтамасын алу</h4>
+                            <p>Зейнетақы мөлшері туралы ресми анықтама</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="item-info">
+                        <span class="item-icon teal-bg">🏢</span>
+                        <div>
+                            <h4>ХҚКО (ЦОН) кезегіне жазылу</h4>
+                            <p>Халыққа қызмет көрсету орталығына алдын ала жазылу</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- СТРАНИЦА 6: Дауыстық көмек (Голосовая помощь) -->
+    <main id="page-voice-info" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">← Артқа</button>
+            <h2>🎙️ Дауыстық көмекші туралы</h2>
+            <p class="subtitle">Сайтты дауыс арқылы басқару мүмкіндіктері</p>
+
+            <button class="voice-btn inline" onclick="speakText('Бұл бөлімде сіз дауыстық көмекшіні қалай пайдалану керектігін үйренесіз. Барлық түймелерде дыбыс белгісі бар.')">
+                🔊 Бөлімді тыңдау
+            </button>
+
+            <div class="info-box">
+                <p>💡 **Қалай жұмыс істейді?**</p>
+                <p>Кез келген беттегі «Тыңдау» немесе «Дауыстық көмек» батырмасын бассаңыз, сайт сізге экрандағы мәтінді дауыстап оқып береді.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
